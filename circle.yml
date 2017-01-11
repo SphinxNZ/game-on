@@ -11,8 +11,8 @@ dependencies:
 test:
     override:
         - coverage run --source=sport,compete,datasource manage.py test
-    post:
-        - coveralls
+    #post:
+        # - coveralls
         # - mkdir -p $CIRCLE_TEST_REPORTS/django/
         # - coverage xml -o $CIRCLE_TEST_REPORTS/django/coverage.xml
             
