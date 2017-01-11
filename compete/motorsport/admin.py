@@ -1,7 +1,7 @@
 from django.contrib import admin
 
-from motorsport.models import Race, RaceClass, RaceCar, RaceEntry
-from motorsport.models import Lap
+from compete.motorsport.models import Race, RaceClass, RaceCar, RaceEntry
+from compete.motorsport.models import Lap
 
 class RaceEntry_InLine(admin.TabularInline):
     model = RaceEntry

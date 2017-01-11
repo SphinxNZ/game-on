@@ -118,7 +118,6 @@ class EventTemplate(Base):
 
 class Event(Base):
     fixture = models.ForeignKey(Fixture)
-    parent = models.ForeignKey('Event',null=True,blank=True)
     event_type = models.CharField(max_length=100, blank=True)
     template = models.ForeignKey(EventTemplate,null=True,blank=True)
 
@@ -134,24 +133,7 @@ class Event(Base):
     count = models.IntegerField(default=1)
 
     class Meta:
-        ordering = ['fixture','created']        
-
-
-    def __str__(self):
-        return "%s - %s: %s by %s" %( self.fixture, self.created, self.template, self.entry )
-
-            
-
-class EventAttribute(models.Model):
-    event = models.ForeignKey(Event)
-    team = models.ForeignKey(Team, blank=True,null=True)
-    entry = models.ForeignKey(Entry, blank=True,null=True)
-
-    name = models.CharField(max_length=100)
-    value = models.CharField(max_length=200)
-
-    def __str__(self):
-        return "%s" % self.name
+        abstract = True
 
 
 class PointsEntry(Base):

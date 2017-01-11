@@ -4,7 +4,7 @@ from django.utils import timezone
 from cbe.party.models import Individual
 from sport.models import Sport, Venue, Competition
 from compete.models import CompetitionRound
-from motorsport.models import Race, RaceClass, RaceEntry, Lap, RaceCar
+from compete.motorsport.models import Race, RaceClass, RaceEntry, Lap, RaceCar
 
 
 class ScoreboardHandler():

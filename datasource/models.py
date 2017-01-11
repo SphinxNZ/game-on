@@ -14,4 +14,6 @@ class DataSource(models.Model):
     round = models.ForeignKey(CompetitionRound, null=True,blank=True)
     source_url = models.URLField(null=True,blank=True)
     
+    def action_start(self):
+        pass
         

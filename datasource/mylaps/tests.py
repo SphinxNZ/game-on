@@ -5,7 +5,7 @@ from django.test import TestCase
 
 from sport.models import Sport, Competition, Venue
 from compete.models import CompetitionRound
-from motorsport.models import Race
+from compete.motorsport.models import Race
 
 from datasource.models import DataSource
 from datasource.mylaps.scoreboard import ScoreboardHandler

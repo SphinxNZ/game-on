@@ -40,10 +40,11 @@ INSTALLED_APPS = [
     'cbe.party',
     'cbe.location',
     'cbe.physical_object',
+    'datasource',
     'sport',
     'compete',
-    'motorsport',
-    'datasource',
+    'compete.motorsport',
+    'compete.ballsport',
 ]
 
 MIDDLEWARE = [
