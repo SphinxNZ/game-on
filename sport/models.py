@@ -52,7 +52,7 @@ class CompetitionLevel(Base):
 class Competition(Base):
     parent = models.ForeignKey('Competition',null=True,blank=True)
     sport = models.ForeignKey(Sport)
-    competition_level = models.ForeignKey(CompetitionLevel)
+    competition_level = models.ForeignKey(CompetitionLevel,null=True,blank=True)
 
     name = models.CharField(max_length=100)
     cities = models.ManyToManyField(City, blank=True)

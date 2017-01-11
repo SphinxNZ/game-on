@@ -22,11 +22,11 @@ class Race(Fixture):
     method = models.CharField(max_length=100, choices=( ('laps', 'laps'), ('duration', 'duration'), ('duration', 'laps or duration'), ),default='laps')
 
     total_laps = models.IntegerField(null=True, blank=True)
-    total_duration = models.DurationField(null=True,blank=True) #new
+    total_duration = models.DurationField(null=True,blank=True)
 
     current_lap_number = models.IntegerField(null=True, blank=True)
     laps_to_go = models.IntegerField(null=True, blank=True)
-    time_to_go = models.DurationField(null=True,blank=True) #new
+    time_to_go = models.DurationField(null=True,blank=True)
 
     def save(self, *args, **kwargs):
         if self.fixture_type is None or self.fixture_type == "":

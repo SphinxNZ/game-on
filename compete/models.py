@@ -1,5 +1,6 @@
 from datetime import datetime
 from django.db import models
+from django.utils import timezone
 
 from sport.models import Base, Sport, Venue, Competition, Season
 from cbe.party.models import Individual, Organisation
@@ -19,7 +20,7 @@ class CompetitionRound(Base):
     competition = models.ForeignKey(Competition)
     season = models.ForeignKey(Season,null=True,blank=True)
 
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=100)
     venue = models.ForeignKey(Venue,null=True,blank=True)
 
     start_date = models.DateField(null=True, blank=True)
@@ -39,7 +40,7 @@ class Fixture(Base):
 
     status = models.CharField(max_length=100, null=True,blank=True,)
     venue = models.ForeignKey(Venue, related_name="fixture_venue")
-    date = models.DateTimeField('fixture date', default=datetime.now)
+    date = models.DateTimeField('fixture date', default=timezone.now)
     start_time = models.DateTimeField(null=True,blank=True)
     finish_time = models.DateTimeField(null=True,blank=True)
 
